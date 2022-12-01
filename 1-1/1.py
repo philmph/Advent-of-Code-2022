@@ -1,5 +1,4 @@
 file_name: str = "./input"
-highest: int = 0
 current: int = 0
 sums: list[int] = []
 
