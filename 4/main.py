@@ -2,6 +2,7 @@ import functions
 
 file_name: str = "./4/input"
 sums: int = 0
+sums_2: int = 0
 
 with open(file_name, "r") as file:
     for line in file:
@@ -25,4 +26,10 @@ with open(file_name, "r") as file:
         if contained:
             sums += 1
 
+        disjoint = functions.check_if_sets_are_disjoin(set1, set2)
+
+        if not disjoint:
+            sums_2 += 1
+
 print(sums)
+print(sums_2)

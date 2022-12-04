@@ -6,8 +6,15 @@ def check_if_sets_contained(set1: set[int], set2: set[int]) -> bool:
     elif (set2.issubset(set1)):
         output = True
 
-    print(set1)
-    print(set2)
-    print(output)
+    return output
+
+
+def check_if_sets_are_disjoin(set1: set[int], set2: set[int]) -> bool:
+    output = True
+
+    if (not set1.isdisjoint(set2)):
+        output = False
+    elif (not set2.isdisjoint(set1)):
+        output = False
 
     return output
