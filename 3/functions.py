@@ -15,3 +15,15 @@ def find_common_compartment_item(rucksack_content: str) -> str:
     for item in compartment_1:
         if (item in compartment_2):
             return item
+
+
+def find_common_group_badge(rucksack_contents: list[str]) -> str:
+    assert len(rucksack_contents) == 3, "rucksack_contents is not equal to 3"
+    for item in set(rucksack_contents[0]):
+        if (item in rucksack_contents[1]):
+            if (item in rucksack_contents[2]):
+                return item
+
+
+def split_list_every_n(l: list[str], n: int) -> list[list[str]]:
+    return [l[i:i+n] for i in range(0, len(l), n)]
