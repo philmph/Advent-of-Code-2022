@@ -1,10 +1,3 @@
-def move_n_containers_to_other_stack(n: int, stack_from: list[str], stack_to: list[str]):
-    for i in range(0, n):
-        print("a")
-
-    return None
-
-
 def build_initial_container_stacks(filecontent: list[str]):
     # split_index is also the max stack height
     split_index = filecontent.index("") - 1
@@ -21,3 +14,12 @@ def build_initial_container_stacks(filecontent: list[str]):
 
     [output[i].reverse() for i in range(0, stack_count)]
     return output
+
+
+def move_container_to_other_stack(container_stacks, f, t):
+    # f and t both need +1 due to index of lists
+    item_to_move = container_stacks[f - 1][-1]
+    container_stacks[f - 1].pop(-1)
+    container_stacks[t - 1].append(item_to_move)
+
+    return container_stacks
