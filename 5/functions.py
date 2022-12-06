@@ -17,9 +17,16 @@ def build_initial_container_stacks(filecontent: list[str]):
 
 
 def move_container_to_other_stack(container_stacks, f, t):
-    # f and t both need +1 due to index of lists
     item_to_move = container_stacks[f - 1][-1]
     container_stacks[f - 1].pop(-1)
     container_stacks[t - 1].append(item_to_move)
+
+    return container_stacks
+
+
+def move_n_containers_to_other_stack(container_stacks, f, t, n):
+    items_to_move = container_stacks[f - 1][-n:]
+    del container_stacks[f - 1][-n:]
+    container_stacks[t - 1].extend(items_to_move)
 
     return container_stacks
